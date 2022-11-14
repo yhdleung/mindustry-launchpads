@@ -60,7 +60,7 @@ const addSelectionButton = (callback) => {
       if (sectors.length) {
         Vars.ui.planet.fill(
           cons((t) => {
-            t.top().left().marginTop(5).marginLeft(5).defaults().size(200, 54);
+            t.top().left().marginTop(5).marginLeft(210).defaults().size(200, 54);
             t.button(
               "Launchpads",
               new TextureRegionDrawable(
