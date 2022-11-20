@@ -37,11 +37,9 @@ const getSectors = () => {
   const sectorInfo = sectors.map((sector) => ({
     source: [sector],
     route:
-      getSectorName(sector) +
-      "\n\n" +
-      String.fromCharCode(Iconc.codes.get("rightOpen")) +
-      " " +
-      getSectorName(sector.info.destination),
+      getSectorName(sector) 
+      + " " + String.fromCharCode(Iconc.codes.get("rightOpen")) 
+      + " " + getSectorName(sector.info.destination) 
   }));
 
   if (sectors.length >= 2) {
@@ -121,9 +119,9 @@ const showSelectionDialog = (callback) => {
 
   dialog.cont
     .defaults()
-    .width(Vars.mobile ? 500 : 560)
-    .pad(4);
-  dialog.cont.pane((t) =>
+    .width(Vars.mobile ? 500 : 720)
+    .pad(2);
+  dialog.cont.pane((t) => {
     exportInfo.forEach((sector) => {
       t.button(sector.route, () => {
         getDestinationDialog().showSelect(
@@ -132,9 +130,7 @@ const showSelectionDialog = (callback) => {
         );
         dialog.hide();
       })
-        .growX()
-        .pad(8)
-        .wrap();
+        .growX().pad(4).wrap();
       t.row();
     })
   );
