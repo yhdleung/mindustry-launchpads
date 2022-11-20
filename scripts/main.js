@@ -133,7 +133,7 @@ const showSelectionDialog = (callback) => {
         .growX().pad(4).wrap();
       t.row();
     })
-  );
+  });
   dialog.show();
 };
 
